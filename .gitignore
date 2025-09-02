@@ -1,0 +1,96 @@
+# Python-specific ignores
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+*.egg-info/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# ML and data-related ignores
+# Model checkpoints and optimizer states
+runs/
+*.pt  # Model checkpoints (e.g., ckpt_00001.pt)
+*.safetensors
+*.bin
+*.pth
+
+# Large datasets and corpora
+data/*.jsonl  # Generated corpora (e.g., minicalculus, Flatland, Semmelweis)
+data/train.bin
+data/val.bin
+data/test.bin
+data/ood.bin
+*.jsonl
+*.csv
+*.parquet
+*.h5
+
+# Logs and experiment outputs
+logs/
+*.log
+tensorboard/
+runs/*/logs/
+runs/*/future_lens/
+runs/*/belief_buffer/
+
+# Temporary files and caches
+*.tmp
+*.bak
+*.swp
+*~
+.cache/
+.pytest_cache/
+.hypothesis/
+.coverage
+coverage.xml
+
+# IDE and editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Environment and sensitive files
+.env
+*.env
+secrets/
+credentials.json
+*.key
+*.pem
+
+# Jupyter notebooks checkpoints
+*.ipynb_checkpoints/
+
+# Large archives and compressed files
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# Documentation build artifacts
+docs/_build/
+docs/.doctrees/
+docs/build/
+
+# Local configuration overrides
+local_config.yaml
+config/local/
+
+# Other large or temporary ML artifacts
+*.pickle
+*.pkl
+*.npy
+*.npz
+*.torch
+*.tfevents
