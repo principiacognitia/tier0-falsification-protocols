@@ -91,14 +91,25 @@ All protocols use:
 ---
 
 ## Repository Structure
-- `src/`: Python scripts (e.g., `corpus_gen.py`, `train.py`).
-- `configs/`: YAML configs (e.g., `agent_n.yaml`).
-- `docs/`: Registered Report and appendices.
-- `data/`: Sample corpora (large datasets hosted on Hugging Face).
-- `.gitignore`: Excludes checkpoints, logs, and large datasets (see details).
+- `src/` — main Python scripts (e.g. `corpus_gen.py`, `train.py`).
+- `configs/` — YAML configs for agents and protocols (e.g. `agent_n.yaml`).
+- `docs/` — text of Stage1 Registered Report and appendices.
+- `data/` — examples of corpora; full datasets are hosted on Hugging Face.
+- `examples/` — ready-made minimal configs and scripts for environment checking (e.g. `train_shakespeare_smoke.py`).
+- `.gitignore` — excludes checkpoints, logs, large datasets and local environments (see details in the file).
 
 ## Reproducibility
-All artifacts are generated via scripts in `src/`. Large files (e.g., `runs/`, `data/*.jsonl`) are ignored to keep the repo lightweight. See [Hugging Face datasets](#) for full corpora.
+All artifacts (corpora, models, results) are reproducible using scripts from `src/` and configs from `configs/`.
+Large files (e.g. `runs/`, `data/*.jsonl`) are not stored in the repository to keep it lightweight; see [Hugging Face datasets](#) for access to full corpora.
+
+A smoke test is available for quick environment and GPU checks:
+```bash
+cd nanoGPT
+python train.py config/train_shakespeare_smoke.py
+```
+It trains a mini-model on the Shakespeare corpus in a couple of minutes and confirms that the setup and CUDA are working correctly.
 
 ## License
 MIT License
+
+---
